@@ -16,7 +16,7 @@ with st.form("input_form"):                  # 약간 트랜잭션 느낌. form 
 col1, col2, col3 = st.columns(3)    
 with col1:
     if st.session_state.get("user_dict") :
-    st.success("로그인이 성공하였습니다") 
+        st.success("로그인이 성공하였습니다") 
 with col2:
     st.code(
         """#include <stdio.h>
