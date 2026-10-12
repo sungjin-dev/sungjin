@@ -13,10 +13,12 @@ with st.form("input_form"):                  # 약간 트랜잭션 느낌. form 
         st.session_state.user_dict[name] = password 
 
 
-col1, col2 = st.columns(2)    
-with col1:
-    if st.session_state.get("user_dict") :
-        st.success("로그인이 성공하였습니다") 
+if st.session_state.get("user_dict") :
+    st.success("로그인이 성공하였습니다") 
+
+
+col1 = st.columns(1)
+
 with col2:
     st.code(
         """#include <stdio.h>
