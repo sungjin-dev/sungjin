@@ -2,20 +2,20 @@ import streamlit as st
 
 st.title("")
 
-if "user_dick" not in st.session_state:
-    st.session_state.user_dick = {}
+if "user_dict" not in st.session_state:
+    st.session_state.user_dict = {}
 
 with st.form("input_form"):                  # 약간 트랜잭션 느낌. form 태그 처럼 해당 폼 안에 입력값들이 한번에 커밋
     name = st.text_input("이름")  
     password = st.text_input("비밀번호")                                         # type="password" *** 이런식으로 뜨게 됨. 
     submitted = st.form_submit_button("등록")
     if submitted and name and password:                                         # .strip() 을 쓰면 공백
-        st.session_state.user_dick[name] = password 
+        st.session_state.user_dict[name] = password 
 
 
 col1, col2, col3 = st.columns(3)    
 with col1:
-    if st.session_state.user_dick :
+    if st.session_state.get("user_dict") :
     st.success("로그인이 성공하였습니다") 
 with col2:
     st.code(
