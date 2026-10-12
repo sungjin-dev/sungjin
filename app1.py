@@ -135,3 +135,39 @@ int main() {
          st.error("틀렸습니다!")
 
 
+with col1:
+    st.code(
+        """#include <stdio.h>
+
+int main() 
+{
+    int x = 120;
+    int *y = &x;
+    *y -= 45;
+    printf("%d %d\n", x, *y);
+
+    const char *z = "Pointers";
+    int k = 0;
+    while (k < 8) {
+        printf("%c-", *(z + k));
+        printf("%c-", z[k]);
+        printf("%s\n", z + k);
+        k += 3;
+    }
+
+    return 0;
+}"""
+    )
+
+    with st.form("c_quiz_form4"):
+            answer = st.text_area("정답")
+            submitted = st.form_submit_button("제출하기")
+    if submitted :
+        if answer =="""75 75
+P-P-Pointers
+n-n-nters
+r-r-rs""":
+            st.success("정답입니다!")
+        else:
+            st.error("틀렸습니다!")
+
