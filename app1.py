@@ -38,7 +38,7 @@ int main()
 
     return 0;
 }
-,language="python
+,language="C"
 """)
     with st.form("input_form"):
         answer = st.text_input("정답")
