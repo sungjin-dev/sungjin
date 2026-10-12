@@ -40,7 +40,7 @@ int main()
 }
 ,language="C"
 """)
-    with st.form("input_form"):
+    with st.form("c_quiz_form"):
         answer = st.text_input("정답")
         submitted = st.form_submit_button("제출하기")
     if submitted :
