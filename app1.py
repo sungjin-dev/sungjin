@@ -12,8 +12,7 @@ with st.form("input_form"):                  # 약간 트랜잭션 느낌. form 
 
 
 if st.session_state.get("user_dict") :
-    st.success("로그인이 성공하였습니다") 
-    st.success("f {이름}님 반갑습니다.") 
+    st.success(f"로그인이 성공하였습니다 {name}님 반갑습니다") 
 
 
 st.title("정보처리기사 문제 풀기")
