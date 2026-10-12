@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("")
+st.title("정보처리기사 문제 풀기")
 
 if "user_dict" not in st.session_state:
     st.session_state.user_dict = {}
