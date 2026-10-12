@@ -58,7 +58,7 @@ st.subheader("금일 할일 목록")
 for task in tasks:
   # border=True를 주면 각 반복 요소가 단정한 상자로 감싸짐
 
-  with st.container(border=true):
+  with st.container(border=True):
 
     st.write(task)
 
