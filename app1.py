@@ -46,7 +46,9 @@ int main()
         submitted = st.form_submit_button("제출하기")
     if submitted :
         if answer == "33 44 55 66 11 22":
-         st.success("성공")
+         st.success("정답입니다!")
+        else:
+         st.info("틀렸습니다!")  
 
 tasks = [
   "1.로그인 계정 firebase 서버 DB에 저장하기",
