@@ -40,7 +40,6 @@ int main()
 }
 
 """
-,language="C"
     )
     with st.form("c_quiz_form"):
         answer = st.text_input("정답")
