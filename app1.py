@@ -45,7 +45,7 @@ int main()
          st.success("성공")
 
 tasks = [
-  "1.로그인 계정 firebase 서버 DB에 저장하기,
+  "1.로그인 계정 firebase 서버 DB에 저장하기",
   "2. 추가 문제 업로드 하기",
   "3. 인터페이스 직관성 높이기"
 ]
