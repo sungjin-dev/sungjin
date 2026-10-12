@@ -2,6 +2,21 @@ import streamlit as st
 
 st.title("정보처리기사 문제 풀기")
 
+tasks = [
+  "1.로그인 계정 firebase 서버 DB에 저장하기",
+  "2. 추가 문제 업로드 하기",
+  "3. 인터페이스 직관성 높이기"
+]
+
+st.subheader("금일 할일 목록")
+
+for task in tasks:
+  # border=True를 주면 각 반복 요소가 단정한 상자로 감싸짐
+
+  with st.container(border=True):
+
+    st.write(task)
+
 if "user_dict" not in st.session_state:
     st.session_state.user_dict = {}
 
@@ -41,27 +56,81 @@ int main()
 
 """
     )
-    with st.form("c_quiz_form"):
+    with st.form("c_quiz_form1"):
         answer = st.text_input("정답")
         submitted = st.form_submit_button("제출하기")
     if submitted :
         if answer == "33 44 55 66 11 22":
          st.success("정답입니다!")
         else:
-         st.info("틀렸습니다!")  
+         st.error("틀렸습니다!")  
 
-tasks = [
-  "1.로그인 계정 firebase 서버 DB에 저장하기",
-  "2. 추가 문제 업로드 하기",
-  "3. 인터페이스 직관성 높이기"
-]
+col1 = st.columns(1)[0]
 
-st.subheader("금일 할일 목록")
+with col1:
+    st.code(
+        """
+#include <stdio.h>
 
-for task in tasks:
-  # border=True를 주면 각 반복 요소가 단정한 상자로 감싸짐
+int main() 
+{
+    int x[5] = {10, 15, 25, 40, 60};
+    int y[4];
+    int *z;
+    int s = 0;
 
-  with st.container(border=True):
+    for (int i = 0; i < 4; i++) {
+        z = &x[i + 1];
+        y[i] = *z + x[i];
+        s += y[i] - i;
+    }
 
-    st.write(task)
+    printf("%d", s);
+
+    return 0;
+}
+"""
+    )
+
+    with st.form("c_quiz_form2"):
+        answer = st.text_input("정답")
+        submitted = st.form_submit_button("제출하기")
+    if submitted :
+        if answer == "244":
+         st.success("정답입니다!")
+        else:
+         st.error("틀렸습니다!")
+
+
+with col1:
+    st.code(
+        """
+#include <stdio.h>
+
+int main() {
+    char s[] = "ULTRAHIGHDEFINITION";
+    int x = 0;
+    int y = 0;
+
+    for (x = 0; *(s + x) != 0; x++) {
+        y = x;
+    }
+
+    int z = y - 4;
+    printf("%c", s[z]);
+
+    return 0;
+}
+"""
+    )
+
+    with st.form("c_quiz_form3"):
+        answer = st.text_input("정답")
+        submitted = st.form_submit_button("제출하기")
+    if submitted :
+        if answer == "I":
+         st.success("정답입니다!")
+        else:
+         st.error("틀렸습니다!")
+
 
