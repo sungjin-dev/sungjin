@@ -17,7 +17,7 @@ if st.session_state.get("user_dict") :
     st.success("로그인이 성공하였습니다") 
 
 
-col1 = st.columns(1)
+col1 = st.columns(1)[0]
 
 with col1:
     st.code(
@@ -38,6 +38,7 @@ int main()
 
     return 0;
 }
+,language="python
 """)
     with st.form("input_form"):
         answer = st.text_input("정답")
