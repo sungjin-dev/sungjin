@@ -19,7 +19,7 @@ if st.session_state.get("user_dict") :
 
 col1 = st.columns(1)
 
-with col2:
+with col1:
     st.code(
         """#include <stdio.h>
 
