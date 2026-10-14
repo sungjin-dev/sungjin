@@ -63,7 +63,7 @@ else:
 
         if st.button("로그인"):
             u = db.collection("users").document(l_id).get()
-            if u.exists and u.to_dict()["password"] == l_pw:
+            if u.exists and u.to_dict()["Password"] == l_pw:
                 st.session_state["login"] = True; st.rerun()
     with tab2:
         n_id = st.text_input("새 아이디", key="n_id")
