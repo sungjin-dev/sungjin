@@ -63,7 +63,7 @@ else:
 
         if st.button("로그인"):
             u = db.collection("users").document(l_id).get()
-            if u.exists and u.to_dict()["Password"] == l_pw:
+            if u.exists and u.to_dict()["password"] == l_pw:
                 st.session_state["login"] = True; st.rerun()
     with tab2:
         n_id = st.text_input("새 아이디", key="n_id")
@@ -71,11 +71,22 @@ else:
         n_pn = st.text_input("새 전화번호", key="n_pn")
         n_mail = st.text_input("새 이메일", key="n_mail")
 
-        if st.button("가입하기"):
+        # if st.button("가입하기"):
 
-            db.collection("users").document(n_id).set({"Phonenumber": n_pn,"Email": n_mail,"Password": n_pw})
-            st.success("회원가입 완료!")
+        #     db.collection("users").document(n_id).set({"Phonenumber": n_pn,"Email": n_mail,"password": n_pw})
+        #     st.success("회원가입 완료!")
+
+        if st.button("가입하기"):
+            print("입력한 비번:", repr(n_pw), "| 길이:", len(n_pw))
+            data = {"password": n_pw, "Phonenumber": n_pn, "Email": n_mail}
+            print("저장할 데이터:", data)
+            db.collection("users").document(n_id).set(data)
+
+            saved = db.collection("users").document(n_id).get().to_dict()
+            print("저장 후 읽은 데이터:", saved)
+            st.success("회원가입 완료!")    
     
+
 
 
 with st.sidebar:
