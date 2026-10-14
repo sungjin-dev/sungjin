@@ -61,8 +61,6 @@ else:
     with tab1:
         l_id = st.text_input("아이디", key="l_id")
         l_pw = st.text_input("비번", type="password", key="l_pw")
-        n_mail = st.text_input("새 이메일", key="n_mail")
-
 
         if st.button("로그인"):
             u = db.collection("users").document(l_id).get()
