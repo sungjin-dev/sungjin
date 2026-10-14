@@ -68,8 +68,8 @@ else:
     with tab2:
         n_id = st.text_input("새 아이디", key="n_id")
         n_pw = st.text_input("새 비번", type="password", key="n_pw")
-        n_pn = st.text_input("새 전화번호", type="Phonenumber" key="n_pn")
-        n_mail = st.text_input("새 이메일", type="Email" key="n_mail")
+        n_pn = st.text_input("새 전화번호", type="Phonenumber", key="n_pn")
+        n_mail = st.text_input("새 이메일", type="Email", key="n_mail")
 
         if st.button("가입하기"):
 
