@@ -73,9 +73,7 @@ else:
 
         if st.button("가입하기"):
 
-            db.collection("users").document(n_id).set({"password": n_pw,
-                                                       "Phonenumber": n_pn,
-                                                       "Email": n_mail})
+            db.collection("users").document(n_id).set({"Phonenumber": n_pn,"Email": n_mail,"password": n_pw})
             st.success("회원가입 완료!")
     
 
