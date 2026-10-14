@@ -64,7 +64,6 @@ if "login" not in st.session_state:
 if st.session_state["login"]:
     st.title("나만의 다이어리")
     if st.button("로그아웃"): st.session_state["login"] = False; st.rerun()
-    miso()
 
 else:
     tab1, tab2 = st.tabs(["로그인", "회원가입"])
