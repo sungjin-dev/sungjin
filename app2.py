@@ -46,16 +46,6 @@ for doc in docs:
         st.rerun()   # redirect / render_template 같은 느낌이지만 리셋 갱신만 함.  st.switch_page() 다른 페이지 이동
 
 # 새로고침 시 데이터 유지
-'''
-if "user_list" not in st.session_state:
-    st.session_state.user_list = []
-
-with st.form("input_form"):
-    name = st.text_input("이름")
-    if st.form_submit_button("등록") and name:
-        st.session_state.user_list.append(name)
-'''
-
 
 
 if "login" not in st.session_state: 
