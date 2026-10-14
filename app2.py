@@ -23,7 +23,6 @@ if sub and task:
     st.success(f"'{task}' 추가됨!")
 
 
-
 # 1. 입력 폼 만들기
 
 with st.form("diary_input"):
@@ -69,11 +68,14 @@ else:
     with tab2:
         n_id = st.text_input("새 아이디", key="n_id")
         n_pw = st.text_input("새 비번", type="password", key="n_pw")
-        n_mail = st.text_input("새 이메일", key="n_mail")
+        n_pn = st.text_input("새 전화번호", type="Phonenumber" key="n_pn")
+        n_mail = st.text_input("새 이메일", type="Email" key="n_mail")
 
         if st.button("가입하기"):
 
-            db.collection("users").document(n_id).set({"password": n_pw})
+            db.collection("users").document(n_id).set({"password": n_pw,
+                                                       "Phonenumber": n_pn,
+                                                       "Email": n_mail})
             st.success("회원가입 완료!")
     
 
