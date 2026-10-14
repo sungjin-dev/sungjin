@@ -68,8 +68,8 @@ else:
     with tab2:
         n_id = st.text_input("새 아이디", key="n_id")
         n_pw = st.text_input("새 비번", type="password", key="n_pw")
-        n_pn = st.text_input("새 전화번호", type="Phonenumber", key="n_pn")
-        n_mail = st.text_input("새 이메일", type="Email", key="n_mail")
+        n_pn = st.text_input("새 전화번호", key="n_pn")
+        n_mail = st.text_input("새 이메일", key="n_mail")
 
         if st.button("가입하기"):
 
@@ -80,3 +80,13 @@ else:
     
 
 
+with st.sidebar:
+    st.header("메모 작성")
+    name = st.text_input("작성자")
+    msg = st.text_input("메모 내용")
+    if st.button("등록"):
+        db.collection("memos").add({"user":name, "text":msg})
+        st.rerun()
+
+    st.title("실시간 메모 게시판")
+    docs = db.collection("memos").stream()
